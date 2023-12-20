@@ -28,10 +28,10 @@ const Header: React.FC = (): JSX.Element => {
 
   return (
     <HStack
-    zIndex={999}
-      py={2}
-      justify="space-between"
-      px={{base: 3, md:20}}
+      zIndex={999}
+      py={{base: 3, md: 4}}
+      justify={{base: "space-between", md: "center"}}
+      px={{ base: 4, md: "48" }}
       pos="fixed"
       top={0}
       bg={
@@ -41,20 +41,12 @@ const Header: React.FC = (): JSX.Element => {
       }
       w="full"
     >
-      <HStack>
-
-      <Image
-        w="50px"
-        rounded="full"
-        bgSize="cover"
-        src="https://res.cloudinary.com/doushe6hn/image/upload/v1702891459/logo/epm0dcbqaydlnfczc4cp.png"
-        alt="logo"
-      />
-
-      <Text fontSize="lg" color={scrolled ?  "white" : "black"} fontWeight="medium">Taufik H</Text>
+      <HStack color={scrolled ? "white" : 'black'} display={{ base: "flex", md: "none" }}>
+        <AiFillGithub size={24} />
+        <AiOutlineInstagram size={24} />
+        <AiFillLinkedin size={24} />
       </HStack>
 
-    
       <HStack
         spacing="10"
         color={scrolled ? "white" : "#666666"}
@@ -68,13 +60,13 @@ const Header: React.FC = (): JSX.Element => {
           <Link href="/contact">Contact</Link>
         </Flex>
 
-        <HStack display={{base: "none", md:"flex"}}>
+        <HStack display={{ base: "none", md: "flex" }}>
           <AiFillGithub size={24} />
           <AiOutlineInstagram size={24} />
           <AiFillLinkedin size={24} />
         </HStack>
       </HStack>
-      <Box display={{base: "block", md:"none"}}>
+      <Box display={{ base: "block", md: "none" }}>
         <HiMenuAlt1 color={scrolled ? "white" : "black"} size={35} />
       </Box>
     </HStack>
